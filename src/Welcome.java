@@ -140,9 +140,9 @@ public class Welcome extends javax.swing.JFrame {
          
          try
          {
-             for(int i = 0; i < 100; i++)  //waiting time until progress bar loading
+             for(int i = 0; i < 110; i++)  //waiting time until progress bar loading
              {
-                 Thread.sleep(10);    //Loading time
+                 Thread.sleep(5);    //Loading time
                  load.progress.setValue(i);
              }
              load.setVisible(false);

@@ -348,6 +348,7 @@ public class student extends javax.swing.JFrame {
             
             preparedStmt.execute();
             
+            //Submit click kalata passe text feild clear weemata
             name.setText("");
            
             JOptionPane.showMessageDialog(null, "ADDED");

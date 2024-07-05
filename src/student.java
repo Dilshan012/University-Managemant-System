@@ -1,8 +1,8 @@
-
-import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.PreparedStatement;
-import com.mysql.jdbc.Statement;
-import java.util.Date;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
+import java.sql.Date;
 import javax.swing.JOptionPane;
 
 /*
@@ -325,16 +325,16 @@ public class student extends javax.swing.JFrame {
             String sGrade = (String) grade.getSelectedItem();
             int sAge = Integer.parseInt(age.getText());
             long Birthday = Date.parse(birthday.getText());
-            java.sql.Date sBirthday = new java.sql.Date(Birthday);
+            java.sql.Date sBirthday = new Date(Birthday);
             String sGender = (String) gender.getSelectedItem();
             long Admission = Date.parse(admission.getText());
-            java.sql.Date sAdmission = new java.sql.Date(Admission);
+            java.sql.Date sAdmission = new Date(Admission);
             String sGuardian = guardian.getText();
             int sContact = Integer.parseInt(contact.getText());
             
             String query = "INSERT INTO student(id, name, address, grade, age, birthday, gender, admission, guardian, contact) VALUES(?,?,?,?,?,?,?,?,?,?)";
             
-            PreparedStatement preparedStmt = (PreparedStatement) con.prepareStatement(query);
+            PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt.setInt(1, sId);
             preparedStmt.setString(2, sName);
             preparedStmt.setString(3, sAddress);
@@ -348,7 +348,7 @@ public class student extends javax.swing.JFrame {
             
             preparedStmt.execute();
             
-            //Submit click kalata passe text feild clear weemata
+            //Submit click kalata passe text field clear weemata
             name.setText("");
            
             JOptionPane.showMessageDialog(null, "ADDED");
@@ -363,6 +363,13 @@ public class student extends javax.swing.JFrame {
     
     private void searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchActionPerformed
         // TODO add your handling code here:
+        
+//        try{
+//            stmt
+//        }
+//        catch{
+//            
+//        }
     }//GEN-LAST:event_searchActionPerformed
 
     private void gradeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gradeActionPerformed
